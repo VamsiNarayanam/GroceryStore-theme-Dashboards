@@ -101,8 +101,85 @@
     margin-top: 8px;
   }
 
+  .order-id {
+    min-width: 0;
+    flex: 0 0 auto;
+  }
+
+  .order-details {
+    min-width: 0;
+    flex: 1 1 140px;
+  }
+
   .dashboard-content {
     padding: 20px 16px;
+  }
+
+  .topbar {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .topbar-search {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .topbar-search input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .card-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .section-header .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+  }
+
+  .quick-actions .btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .alert-item {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .alert-item-info {
+    min-width: 0;
+    flex: 1 1 140px;
+  }
+
+  .chart-value {
+    font-size: 9px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .welcome-banner p {
+    max-width: 100%;
   }
 
   .notification-dropdown {
@@ -181,6 +258,18 @@
   .data-table td {
     padding: 10px 12px;
     font-size: 13px;
+  }
+
+  .card-header {
+    padding: 16px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-title {
+    font-size: 16px;
   }
 
   .chart-bars {
