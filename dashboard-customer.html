@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshMart Customer Portal — Shop fresh groceries online.">
+  <title>My Dashboard — Stackly Mart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="customer">
+  <div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar" aria-label="Customer navigation">
+      <div class="sidebar-header">
+        <div class="logo logo--brand">
+          <img src="assets/stackly-store-logo.webp" alt="Stackly Mart" class="brand-logo">
+          <span class="logo-tagline">Customer Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link active" data-section="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="orders">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            My Orders
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            My Cart
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="deals">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            Deals &amp; Offers
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="favorites">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            Favorites
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="addresses">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Delivery Addresses
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="support">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Support
+          </button>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button type="button" class="sidebar-nav-link logout-link logout-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <div class="dashboard-main">
+      <header class="topbar">
+        <button type="button" class="topbar-toggle" id="sidebarToggle" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <div class="topbar-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" placeholder="Search products, brands, categories&hellip;" aria-label="Search products">
+        </div>
+
+        <div class="topbar-actions">
+          <span class="role-badge">Customer</span>
+
+          <div class="notification-wrap">
+            <button type="button" class="notification-btn" id="notificationBtn" aria-label="Notifications" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+              <span class="notification-dot" aria-hidden="true"></span>
+            </button>
+            <div class="notification-dropdown" id="notificationDropdown">
+              <div class="notification-header">Notifications</div>
+              <div class="notification-list" id="notificationList"></div>
+            </div>
+          </div>
+
+          <div class="profile-wrap">
+            <button type="button" class="profile-btn" id="profileBtn" aria-label="Profile menu" aria-expanded="false">
+              <div class="profile-avatar" data-user-initials>FM</div>
+              <div class="profile-info">
+                <span class="profile-name" data-user-name>User</span>
+                <span class="profile-email" data-user-email>user@stackly.com</span>
+              </div>
+              <svg class="profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="profile-dropdown-header">
+                <div class="profile-avatar" data-user-initials>FM</div>
+                <div>
+                  <h4 data-user-name>User</h4>
+                  <p data-user-email>user@stackly.com</p>
+                </div>
+              </div>
+              <div class="profile-dropdown-menu">
+                <button type="button" data-goto-section="addresses">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  My Addresses
+                </button>
+                <button type="button" data-goto-section="orders">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+                  Order History
+                </button>
+                <button type="button" class="logout-item logout-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+   
+        <section class="dashboard-section active" id="section-dashboard">
+          <div class="welcome-banner">
+            <h1>Hello, <span data-user-firstname>there</span>!</h1>
+            <p>Your fresh groceries are on the way. Check today&rsquo;s deals and reorder your favorites in one tap.</p>
+            <button type="button" class="btn btn-secondary" data-goto-section="deals">Browse Today&rsquo;s Deals</button>
+          </div>
+
+          <div class="stats-grid" id="statsGrid"></div>
+
+          <div class="section-header">
+            <div>
+              <h2>Today&rsquo;s Deals</h2>
+              <p>Fresh savings on produce, dairy, and pantry staples</p>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" data-goto-section="deals">View All</button>
+          </div>
+          <div class="products-grid" id="dealsGrid"></div>
+
+          <div class="dashboard-grid" style="margin-top:28px">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Recent Orders</h3>
+                <button type="button" class="btn btn-ghost btn-sm" data-goto-section="orders">See All</button>
+              </div>
+              <div class="card-body">
+                <div class="orders-list" id="recentOrders"></div>
+              </div>
+            </div>
+
+            <div class="reorder-panel">
+              <h3 class="card-title">Quick Reorder</h3>
+              <p style="color:var(--text-light);font-size:14px;margin-top:4px">Your most-purchased items, ready to add</p>
+              <div class="reorder-items" id="reorderItems"></div>
+              <button type="button" onclick="window.location.href='404.html'" class="btn btn-primary" data-goto-section="cart">Reorder All Items</button>
+            </div>
+          </div>
+
+          <div class="cta-banner">
+            <div>
+              <h3>Need groceries today?</h3>
+              <p>Shop fresh deals and get same-day delivery before 6 PM.</p>
+            </div>
+            <button type="button" class="btn" data-goto-section="deals">Shop Fresh Deals</button>
+          </div>
+        </section>
+
+  
+        <section class="dashboard-section" id="section-orders">
+          <div class="section-header">
+            <div>
+              <h2>My Orders</h2>
+              <p>Track and manage all your grocery deliveries</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="orders-list" id="allOrdersList"></div>
+            </div>
+          </div>
+        </section>
+
+       
+        <section class="dashboard-section" id="section-cart">
+          <div class="section-header">
+            <div>
+              <h2>My Cart</h2>
+              <p>Review your items before checkout</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="cart-list" id="cartList"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="section-deals">
+          <div class="section-header">
+            <div>
+              <h2>Deals &amp; Offers</h2>
+              <p>Save big on fresh produce and daily essentials</p>
+            </div>
+          </div>
+          <div class="products-grid" id="allDealsGrid"></div>
+        </section>
+
+       
+        <section class="dashboard-section" id="section-favorites">
+          <div class="section-header">
+            <div>
+              <h2>Favorites</h2>
+              <p>Your saved items for quick reordering</p>
+            </div>
+          </div>
+          <div class="favorites-grid" id="favoritesGrid"></div>
+        </section>
+
+        <section class="dashboard-section" id="section-addresses">
+          <div class="section-header">
+            <div>
+              <h2>Delivery Addresses</h2>
+              <p>Manage where we deliver your groceries</p>
+            </div>
+            <button type="button" onclick="window.location.href='404.html'" class="btn btn-primary btn-sm">Add New Address</button>
+          </div>
+          <div class="address-grid" id="addressGrid"></div>
+        </section>
+
+     
+        <section class="dashboard-section" id="section-support">
+          <div class="section-header">
+            <div>
+              <h2>Support</h2>
+              <p>We&rsquo;re here to help with your grocery needs</p>
+            </div>
+          </div>
+          <div class="support-cards">
+            <div class="card support-card">
+              <div class="support-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              </div>
+              <h3>Live Chat</h3>
+              <p>Chat with our support team — available 7 AM to 10 PM daily.</p>
+              <button  type="button" onclick="window.location.href='404.html'" class="btn btn-primary btn-sm">Start Chat</button>
+            </div>
+            <div class="card support-card">
+              <div class="support-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <h3>Call Us</h3>
+              <p>Reach us at 9876543210 for order help and delivery updates.</p>
+              <button type="button" onclick="window.location.href='404.html'" class="btn btn-outline btn-sm">Call Now</button>
+            </div>
+            <div class="card support-card">
+              <div class="support-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <h3>FAQs</h3>
+              <p>Find answers about delivery, returns, and payment options.</p>
+              <button type="button" onclick="window.location.href='404.html'" class="btn btn-ghost btn-sm">Browse FAQs</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/preloader.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

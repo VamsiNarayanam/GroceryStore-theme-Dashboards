@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshMart Admin Portal — Store management and inventory control.">
+  <title>Admin Dashboard — Stackly Mart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="admin">
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
+      <div class="sidebar-header">
+        <div class="logo logo--brand">
+          <img src="assets/stackly-store-logo.webp" alt="Stackly Mart" class="brand-logo">
+          <span class="logo-tagline">Store Manager</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link active" data-section="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="orders">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            Orders
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="inventory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            Inventory
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="products">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            Products
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="customers">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            Customers
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="routes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Delivery Routes
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="reports">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Reports
+          </button>
+        </div>
+        <div class="sidebar-nav-item">
+          <button type="button" class="sidebar-nav-link" data-section="settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            Settings
+          </button>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button type="button" class="sidebar-nav-link logout-link logout-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-main">
+      <header class="topbar">
+        <button type="button" class="topbar-toggle" id="sidebarToggle" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <div class="topbar-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" placeholder="Search orders, products, customers&hellip;" aria-label="Search">
+        </div>
+
+        <div class="topbar-actions">
+          <span class="role-badge admin">Admin</span>
+
+          <div class="notification-wrap">
+            <button type="button" class="notification-btn" id="notificationBtn" aria-label="Notifications" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+              <span class="notification-dot" aria-hidden="true"></span>
+            </button>
+            <div class="notification-dropdown" id="notificationDropdown">
+              <div class="notification-header">Notifications</div>
+              <div class="notification-list" id="notificationList"></div>
+            </div>
+          </div>
+
+          <div class="profile-wrap">
+            <button type="button" class="profile-btn" id="profileBtn" aria-label="Profile menu" aria-expanded="false">
+              <div class="profile-avatar" data-user-initials>FM</div>
+              <div class="profile-info">
+                <span class="profile-name" data-user-name>Admin</span>
+                <span class="profile-email" data-user-email>admin@Stacklymart.com</span>
+              </div>
+              <svg class="profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="profile-dropdown-header">
+                <div class="profile-avatar" data-user-initials>FM</div>
+                <div>
+                  <h4 data-user-name>Admin</h4>
+                  <p data-user-email>admin@Stacklymart.com</p>
+                </div>
+              </div>
+              <div class="profile-dropdown-menu">
+                <button type="button" data-goto-section="settings">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                  Store Settings
+                </button>
+                <button type="button" data-goto-section="reports">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  View Reports
+                </button>
+                <button type="button" class="logout-item logout-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+       
+        <section class="dashboard-section active" id="section-dashboard">
+          <div class="welcome-banner">
+            <h1>Welcome back, <span data-user-name>Manager</span>!</h1>
+            <p>Here&rsquo;s what&rsquo;s happening at your Stackly mart store today. Monitor orders, stock levels, and revenue at a glance.</p>
+          </div>
+
+          <div class="stats-grid" id="statsGrid"></div>
+
+          <div class="dashboard-grid">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Recent Orders</h3>
+                <button type="button" class="btn btn-ghost btn-sm" data-goto-section="orders">View All</button>
+              </div>
+              <div class="card-body" id="ordersTable"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Low Stock Alerts</h3>
+                <button type="button" class="btn btn-ghost btn-sm" data-goto-section="inventory">Manage</button>
+              </div>
+              <div class="card-body">
+                <div class="alert-list" id="lowStockList"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:24px">
+            <div class="card-header">
+              <h3 class="card-title">Weekly Sales Overview</h3>
+              <span style="font-size:13px;color:var(--text-light)">Last 7 days</span>
+            </div>
+            <div class="card-body">
+              <div class="chart-container">
+                <div class="chart-bars" id="salesChart"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:24px">
+            <div class="card-header">
+              <h3 class="card-title">Quick Actions</h3>
+            </div>
+            <div class="card-body">
+              <div class="quick-actions">
+                <button type="button" onclick="window.location.href='404.html'" class="btn btn-primary quick-action-btn" data-action="add-product">Add Product</button>
+                <button type="button" onclick="window.location.href='404.html'"  class="btn btn-secondary quick-action-btn" data-action="update-stock">Update Stock</button>
+                <button type="button" onclick="window.location.href='404.html'" class="btn btn-outline quick-action-btn" data-action="export-report">Export Report</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="section-orders">
+          <div class="section-header">
+            <div>
+              <h2>Orders</h2>
+              <p>Manage and fulfill customer grocery orders</p>
+            </div>
+            <button type="button" onclick="window.location.href='404.html'" class="btn btn-primary btn-sm">Create Order</button>
+          </div>
+          <div class="card">
+            <div class="card-body" id="allOrdersTable"></div>
+          </div>
+        </section>
+
+        
+        <section class="dashboard-section" id="section-inventory">
+          <div class="section-header">
+            <div>
+              <h2>Inventory</h2>
+              <p>Monitor stock levels and reorder supplies</p>
+            </div>
+            <button type="button" onclick="window.location.href='404.html'" class="btn btn-secondary btn-sm quick-action-btn" data-action="update-stock">Update Stock</button>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Low Stock Items</h3>
+            </div>
+            <div class="card-body">
+              <div class="alert-list" id="inventoryAlerts"></div>
+            </div>
+          </div>
+        </section>
+
+       
+        <section class="dashboard-section" id="section-products">
+          <div class="section-header">
+            <div>
+              <h2>Products</h2>
+              <p>Manage your grocery product catalog</p>
+            </div>
+            <button type="button" onclick="window.location.href='404.html'"  class="btn btn-primary btn-sm quick-action-btn" data-action="add-product">Add Product</button>
+          </div>
+          <div class="card">
+            <div class="card-body" id="productsTable"></div>
+          </div>
+        </section>
+
+        
+        <section class="dashboard-section" id="section-customers">
+          <div class="section-header">
+            <div>
+              <h2>Customers</h2>
+              <p>View and manage registered shoppers</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body" id="customersTable"></div>
+          </div>
+        </section>
+
+        
+        <section class="dashboard-section" id="section-routes">
+          <div class="section-header">
+            <div>
+              <h2>Delivery Routes</h2>
+              <p>Optimize delivery schedules and driver assignments</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="orders-list">
+                <div class="order-item">
+                  <div class="order-id">Route A</div>
+                  <div class="order-details">
+                    <h4>Downtown &amp; Midtown</h4>
+                    <p>Driver: Marcus Lee &middot; 8 deliveries</p>
+                  </div>
+                  <span class="status-pill status-delivery">In Progress</span>
+                  <div class="order-meta">
+                    <div class="order-total">ETA 3:30 PM</div>
+                  </div>
+                </div>
+                <div class="order-item">
+                  <div class="order-id">Route B</div>
+                  <div class="order-details">
+                    <h4>Westside &amp; Suburbs</h4>
+                    <p>Driver: Ana Rodriguez &middot; 6 deliveries</p>
+                  </div>
+                  <span class="status-pill status-packed">Loading</span>
+                  <div class="order-meta">
+                    <div class="order-total">ETA 4:00 PM</div>
+                  </div>
+                </div>
+                <div class="order-item">
+                  <div class="order-id">Route C</div>
+                  <div class="order-details">
+                    <h4>North District</h4>
+                    <p>Driver: James Wilson &middot; 5 deliveries</p>
+                  </div>
+                  <span class="status-pill status-delivered">Completed</span>
+                  <div class="order-meta">
+                    <div class="order-total">Finished 1:15 PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      
+        <section class="dashboard-section" id="section-reports">
+          <div class="section-header">
+            <div>
+              <h2>Reports</h2>
+              <p>Sales analytics and performance insights</p>
+            </div>
+            <button type="button" onclick="window.location.href='404.html'" class="btn btn-outline btn-sm quick-action-btn" data-action="export-report">Export Report</button>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Weekly Revenue</h3>
+            </div>
+            <div class="card-body">
+              <div class="chart-container">
+                <div class="chart-bars" id="reportsChart"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <section class="dashboard-section" id="section-settings">
+          <div class="section-header">
+            <div>
+              <h2>Settings</h2>
+              <p>Configure your Mart store preferences</p>
+            </div>
+          </div>
+          <div class="dashboard-grid">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Store Information</h3>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label class="form-label" for="storeName">Store Name</label>
+                  <input type="text" id="storeName" class="form-input" value="Stackly Mart — Main Street">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="storeEmail">Contact Email</label>
+                  <input type="email" id="storeEmail" class="form-input" value="Store@Stacklymart.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="storePhone">Phone</label>
+                  <input type="tel" id="storePhone" class="form-input" value="9876543210">
+                </div>
+                <button type="button" onclick="window.location.href='404.html'"  class="btn btn-primary btn-sm">Save Changes</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Delivery Settings</h3>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label class="form-label" for="deliveryRadius">Delivery Radius (miles)</label>
+                  <input type="number" id="deliveryRadius" class="form-input" value="15">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="minOrder">Minimum Order ($)</label>
+                  <input type="number" id="minOrder" class="form-input" value="25">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="deliveryFee">Delivery Fee ($)</label>
+                  <input type="number" id="deliveryFee" class="form-input" value="4.99">
+                </div>
+                <button type="button" onclick="window.location.href='404.html'" class="btn btn-primary btn-sm">Update Delivery</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/preloader.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
