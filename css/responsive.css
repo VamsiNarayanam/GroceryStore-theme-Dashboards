@@ -117,7 +117,7 @@
 
   .topbar {
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .topbar-search {
